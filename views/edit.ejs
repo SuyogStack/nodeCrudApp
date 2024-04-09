@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update FORM</title>
+    <style>
+        html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-image: url(https://www.fnu.edu/wp-content/uploads/2014/09/Study_in_group_in_the_HHS_library.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Inter, sans-serif;
+  }
+  
+  .container {
+    margin: 0;
+    padding: 48px 0;
+    width: 100%;
+    height: inherit;
+    background-color: #2c003fdd;
+  }
+  
+  h1,
+  p {
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 36px;
+    font-weight: 500;
+  }
+  
+  p {
+    margin: 0;
+    font-weight: 200;
+  }
+  
+  form {
+    width: 600px;
+    margin: 48px auto 36px auto;
+    background-color: #1e002acc;
+    padding: 48px 36px;
+    border-radius: 10px;
+  }
+  
+  form label:first-of-type {
+    margin-top: 0;
+  }
+  
+  label {
+    display: block;
+    margin: 24px 0;
+    font-size: 18px;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    width: 100%;
+    max-width: 600px;
+    min-height: 32px;
+    margin-top: 8px;
+    padding: 8px 8px;
+    border-radius: 4px;
+    border: 0;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  
+  fieldset input {
+    min-height: unset;
+    width: 15px;
+    height: 15px;
+    vertical-align: text-line;
+  }
+  
+  fieldset label {
+    margin: 4px 0;
+  }
+  
+  legend {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  button {
+    padding: 12px;
+    background-color: rgb(0, 170, 0);
+    color: white;
+  }
+  .back{
+    color: white;
+  }
+  
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="title">Update Form</h1>
+    </header>
+    <main>
+      <form id="survey-form" action="http://localhost:3000/final-update" method="post">
+        <input id="id" name="id" type="hidden" value="<%- result.id  %>"/>
+        <label id="name-label" for="name">Name<input id="name" name="name" type="text" placeholder="Enter your Name" required value="<%- result.name  %>"/></label>
+        <label id="email-label" for="email">Email<input id="email" name="email" type="Email" placeholder="Enter your Email" required value="<%- result.email  %>"/></label>
+        <label id="number-label" for="number">Age (optional)<input id="number" name="age" type="number" placeholder="Enter your Age" min="13" max="120" value="<%- result.age  %>"/></label>
+        <label for="dropdown">
+          Which option best describes your current role?
+          <select id="dropdown" name="role" required value="<%- result.role  %>">
+            <option value="" disabled selected>Select current role</option>
+            <option value="1">Student</option>
+            <option value="2">Full Time Job</option>
+            <option value="3">Full Time Learner</option>
+            <option value="4">Prefer not to say</option>
+            <option value="5">Other</option>
+          </select>
+        </label>
+        <label for="note">
+          Any comments or suggestions?
+          <textarea id="note" name="comment" placeholder="Enter yor comment here..." rows="7" value="<%- result.comment  %>"></textarea>
+        </label>
+        <button id="submit">Update</button>
+        <button id="submit">
+            <a href="/data" class="back">Back</a>
+        </button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
