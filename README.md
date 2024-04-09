@@ -1,6 +1,6 @@
 # nodeCrudApp
 
-#Its Basic App to practice begginurs 
+#Its Basic App to practice Beginners 
 Nodejs
 Express js
 ejs
